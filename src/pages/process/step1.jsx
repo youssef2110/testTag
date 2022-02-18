@@ -20,6 +20,8 @@ function StepOne() {
   useEffect(function() {
     if (typeof window !== "undefined") {
 
+      localStorage.setItem("theme", 'light')
+
       if(localStorage.getItem("pourcentage")){
         if(0 < parseInt(localStorage.getItem("valueStep")) && parseInt(localStorage.getItem("valueStep")) < 8){
           setPourcentage(parseInt(localStorage.getItem("pourcentage")));

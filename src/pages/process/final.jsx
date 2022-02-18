@@ -9,13 +9,16 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 function Final() {
-    useEffect(function() {
-        if (typeof window !== "undefined") {
-            if(localStorage.getItem("petInfo")){
-                setPetName(JSON.parse(localStorage.getItem("petInfo")).name);
-            }
-        }
-    },[]);
+  useEffect(function() {
+    if (typeof window !== "undefined") {
+      
+      localStorage.setItem("theme", 'light')
+
+      if(localStorage.getItem("petInfo")){
+          setPetName(JSON.parse(localStorage.getItem("petInfo")).name);
+      }
+    }
+  },[]);
 
   const [petName, setPetName] = useState('')
 

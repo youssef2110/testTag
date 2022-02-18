@@ -17,6 +17,8 @@ function StepThree() {
   useEffect(function() {
     if (typeof window !== "undefined") {
 
+      localStorage.setItem("theme", 'light')
+
       if(localStorage.getItem("pourcentage")){
         if(11 < parseInt(localStorage.getItem("valueStep")) && parseInt(localStorage.getItem("valueStep")) < 14){
           setPourcentage(parseInt(localStorage.getItem("pourcentage")));
