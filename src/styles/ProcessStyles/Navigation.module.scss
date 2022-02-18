@@ -1,0 +1,74 @@
+// Header Container
+.Header{
+    height: 90px;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    z-index: 4;
+}
+.Header2{
+    height: 90px;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    z-index: 4;
+}
+
+// Footer Container
+.Footer{
+    position: fixed;
+    bottom: 0;
+    height: 75px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #FFFFFF;
+    z-index: 4;
+    .Navigate{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    span{
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 21px;
+        color: #ACACAC;
+        margin: 0px 8px;
+        cursor: pointer;
+    }
+}
+.DivFotter{
+    height: 75px;
+    width: 100%;
+}
+@media (max-width: 1500px) {
+    .Footer{
+        width: calc(100% + 300px);
+        span{
+            font-size: 16px;
+        }
+    }
+    .Header{
+        width: calc(100% + 300px);
+    }
+}
+@media (max-width: 1024px) {
+    .Footer{
+        width: 100%;
+    }
+    .Header{
+        width: 100%;
+    }
+}
