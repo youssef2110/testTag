@@ -7,9 +7,9 @@ import * as SolidIcon from "@fortawesome/free-solid-svg-icons"
 import { ButtonActivate, ContainerOther, TagCard } from './FourthStepUi'
 import Link from 'next/link'
 import done from 'static/assets/done.png'
-import tag1 from 'static/assets/tag1.png'
-import tag2 from 'static/assets/tag2.png'
-import tag3 from 'static/assets/tag3.png'
+import tag1 from 'static/assets/Tag1.png'
+import tag2 from 'static/assets/Tag2.png'
+import tag3 from 'static/assets/Tag3.png'
 import styles from 'styles/ProcessStyles/Steps.module.scss'
 function CarouselPrev2(props) {
     const { onClick } = props

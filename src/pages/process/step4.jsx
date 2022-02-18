@@ -6,7 +6,7 @@ import Header from "components/Navigation/header";
 import styles from 'styles/ProcessStyles/Steps.module.scss'
 import { ValuesStep1 } from "components/Navigation/PourcentageSteps" 
 import Footer2 from "components/Navigation/Footer2";
-import Footer from "components/Navigation/footer"
+import Footer from "components/Navigation/Footer"
 import FakeFooter from "components/Navigation/FakeFooter";
 import TagsInfo from "components/FourthStep/tagsInfo";
 import TagsActivate from "components/FourthStep/tagsActivate";

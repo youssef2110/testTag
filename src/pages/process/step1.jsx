@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import withLayout from "components/layout/withLayout"
 import ProgressBar from "components/progressBar/progressBar"
 import Header from "components/Navigation/header"
-import Footer from "components/Navigation/footer"
+import Footer from "components/Navigation/Footer"
 import FakeFooter from "components/Navigation/FakeFooter"
 import styles from 'styles/ProcessStyles/Steps.module.scss'
 import PetChoice from "components/FirstStep/petChoice"
