@@ -38,7 +38,7 @@ export default function TagsActivate() {
                     <div className={styles.QrCodeCamera}> 
                         <QrReader
                             delay={1000}
-                            facingMode='environment'
+                            facingMode={facingMode}
                             onResult={(result) => {
                                 if (result) {
                                     handleScan(result?.text);
@@ -46,7 +46,7 @@ export default function TagsActivate() {
                             }}
                             style={{ width: '100%'  }}
                         />
-                        <button onClick={() => camareButton()}></button>
+                        <button onClick={() => camareButton()}>test</button>
                     </div>
                     :
                     <>
