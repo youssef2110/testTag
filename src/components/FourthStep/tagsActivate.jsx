@@ -29,6 +29,7 @@ export default function TagsActivate() {
                     <div className={styles.QrCodeCamera}> 
                         <QrReader
                             delay={1000}
+                            facingMode='environment'
                             onResult={(result) => {
                                 if (result) {
                                     handleScan(result?.text);
