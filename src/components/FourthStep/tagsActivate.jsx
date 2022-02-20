@@ -9,7 +9,7 @@ import { QrReader } from 'react-qr-reader';
 
 export default function TagsActivate() {
   const [activate, setActivate] = useState('')
-  const [facingMode, setFacingMode] = useState('')
+  const [facingMode, setFacingMode] = useState('user')
   const [activateCamera, setActivateCamera] = useState(false)
   const ValidatInfo = () => {
   }
@@ -21,10 +21,10 @@ export default function TagsActivate() {
   };
 
   const camareButton = () =>{
-    if(facingMode === "environment"){
+    if(facingMode === "rear"){
         setFacingMode("user")
     } else {
-        setFacingMode("environment")
+        setFacingMode("rear")
     }
   }
   return (
