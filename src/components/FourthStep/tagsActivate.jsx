@@ -9,7 +9,7 @@ import { QrReader } from 'react-qr-reader';
 
 export default function TagsActivate() {
   const [activate, setActivate] = useState('')
-  const [facingMode, setFacingMode] = useState('user')
+  const [facingMode, setFacingMode] = useState('environment')
   const [activateCamera, setActivateCamera] = useState(false)
   const ValidatInfo = () => {
   }
