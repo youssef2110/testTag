@@ -13,9 +13,10 @@ import { swal } from "components/swal/instance"
 
 export default function ImageStep({NextStep}) {
     const [files, setFiles] = useState([]);
-    const [filesPreview, setFilesPreview] = useState([]);
+    const [filesPreview, setFilesPreview] = useState('');
     const [petName, setPetName] = useState('')
     const dispatch = useDispatch();
+    
     const ValidatInfo = () => {
         dispatch(petPictureAction({picture : files, picturePreview : filesPreview}));
         NextStep()
@@ -23,28 +24,34 @@ export default function ImageStep({NextStep}) {
     useEffect(function() {
         if (typeof window !== "undefined") {
             if(localStorage.getItem("petInfo")){
-                JSON.parse(localStorage.getItem("petInfo")).picture ? setFiles(JSON.parse(localStorage.getItem("petInfo")).picture) : null;
-                JSON.parse(localStorage.getItem("petInfo")).picturePreview ? setFilesPreview(JSON.parse(localStorage.getItem("petInfo")).picturePreview) : null;
+                JSON.parse(localStorage.getItem("petInfo")).picture ? setFiles(JSON.parse(localStorage.getItem("petInfo")).picture) : [];
+                JSON.parse(localStorage.getItem("petInfo")).picturePreview ? setFilesPreview(JSON.parse(localStorage.getItem("petInfo")).picturePreview) : '';
                 setPetName(JSON.parse(localStorage.getItem("petInfo")).name);
             }
         }
     },[]);
     
     const {getRootProps, getInputProps} = useDropzone({
-    accept: '.pdf, .txt, image/*',
+    accept: 'image/*',
     maxSize: 2097152,
     onDrop: (acceptedFiles, fileRejections) => {
         if(acceptedFiles.length > 0){
             setFiles(acceptedFiles[0]);
-            setFilesPreview(acceptedFiles.map(file => Object.assign(file, {
-                preview: URL.createObjectURL(file)
-            })));
+            getBase64(acceptedFiles[0])
         }
         if(fileRejections.length > 0){
             swal.fire({ text: 'error', icon: "error" })
         }
     }
     });
+
+    const getBase64 = (file) => {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+            setFilesPreview(evt.target.result);
+          };
+        reader.readAsDataURL(file);
+    }
 
 
   return (
@@ -57,7 +64,7 @@ export default function ImageStep({NextStep}) {
                     filesPreview.length > 0
                     ?
                         <div className={styles.ImagePet}>
-                            <Image src={filesPreview[0].preview} layout='fill' objectFit='contain' alt="Pet's picture" />
+                            <Image src={filesPreview} layout='fill' objectFit='contain' alt="Pet's picture" />
                         </div>
                     :
                     <>

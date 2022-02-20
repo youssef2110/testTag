@@ -3,6 +3,7 @@ import TYPES from "store/types"
 const initialState = {
   contactInfo : '',
   vetInfo : '',
+  activation : '',
 }
 
 function generalInfoReducer(state = initialState, action) {
@@ -16,6 +17,11 @@ function generalInfoReducer(state = initialState, action) {
       return {
         ...state,
         vetInfo: action.payload
+    }
+    case TYPES.ACTIVATION_INFO:
+      return {
+        ...state,
+        activation: action.payload
     }
     default:
       return state

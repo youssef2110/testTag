@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { swal } from "components/swal/instance"
 import { firebaseClient } from "components/firebase/firebaseClient"
 
-export default function SignUp({Continuer}) {
+export default function SignUp({Valider}) {
 
   const [infoUser, setInfoUser] = useState({email : '', password : '', rePassword: ''})
   
@@ -40,7 +40,7 @@ export default function SignUp({Continuer}) {
           if(infoUser.password !== infoUser.rePassword){
             swal.fire({ text: 'Both passwords must be the same ', icon: "error" })
           }else{
-            Continuer()
+            Valider()
             onSubmit(infoUser)
           }
       }

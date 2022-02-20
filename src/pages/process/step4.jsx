@@ -49,7 +49,7 @@ function StepThree() {
 
   const NextStep = () => {
     if(underStep === 13){
-      router.push('/process/stepFinal')
+      router.push('/process/final')
     }else{
       localStorage.setItem("pourcentage", ValuesStep1[underStep])
       localStorage.setItem("valueStep", underStep+1)

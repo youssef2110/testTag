@@ -9,18 +9,21 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 function Final() {
-  useEffect(function() {
-    if (typeof window !== "undefined") {
-      
-      localStorage.setItem("theme", 'light')
 
-      if(localStorage.getItem("petInfo")){
-          setPetName(JSON.parse(localStorage.getItem("petInfo")).name);
-      }
+  useEffect(function() {
+
+    localStorage.setItem("theme", 'light')
+    
+    if (typeof window !== "undefined") {
+        if(localStorage.getItem("petInfo")){
+          setPetInfo(JSON.parse(localStorage.getItem("petInfo")));
+          setGeneralInfo(JSON.parse(localStorage.getItem("generalInfo")));
+        }
     }
   },[]);
 
-  const [petName, setPetName] = useState('')
+  const [petInfo, setPetInfo] = useState({})
+  const [generalInfo, setGeneralInfo] = useState({})
 
   return (
     <div className={styles.All2}>
@@ -29,20 +32,31 @@ function Final() {
             <div className={styles.FinalContainer}>
                     <Container>
                         <div className={styles.FinalInformation}>
-                            <Image src={done} height={100} width={100} alt="sucess" />
+                            <Image src={done} height={80} width={80} alt="sucess" />
                             <h1 className={styles.TitleFinale}>Congratulation, your account is now open</h1>
-                            <h3 className={styles.UnderTitleFinale}>What’s Next?</h3>
+                            <h3 className={styles.UnderTitleFinale}>{"What’s Next?"}</h3>
                             <div className={styles.buttons}>
                                 <Link href="#"><a><span>Take a tour platform</span><Image src={arrow} height={25} width={30} alt="arrow" /></a></Link>
-                                <Link href="#"><a><span>Add {petName}’s document</span><Image src={arrow} height={25} width={30} alt="arrow" /></a></Link>
+                                <Link href="#"><a><span>{"Add "+petInfo.name+"’s document"}</span><Image src={arrow} height={25} width={30} alt="arrow" /></a></Link>
                                 <Link href="#"><a><span>Check out our veterinarian features</span><Image src={arrow} height={25} width={30} alt="arrow" /></a></Link>
-                                <Link href="#"><a><span>Upload {petName}’s document</span><Image src={arrow} height={25} width={30} alt="arrow" /></a></Link>
-                                <Link href="#"><a><span>Set {petName}’s reminders</span><Image src={arrow} height={25} width={30} alt="arrow" /></a></Link>
-                                <Link href="#"><a><span>Start {petName}’s health journal</span><Image src={arrow} height={25} width={30} alt="arrow" /></a></Link>
+                                <Link href="#"><a><span>{"Upload "+petInfo.name+"’s document"}</span><Image src={arrow} height={25} width={30} alt="arrow" /></a></Link>
+                                <Link href="#"><a><span>{"Set "+petInfo.name+"’s reminders"}</span><Image src={arrow} height={25} width={30} alt="arrow" /></a></Link>
+                                <Link href="#"><a><span>{"Start "+petInfo.name+"’s health journal"}</span><Image src={arrow} height={25} width={30} alt="arrow" /></a></Link>
                             </div>
                         </div>
                     </Container>
             <div className={styles.ContainerImage3}>
+              <p className={styles.PetName}>{petInfo.name}</p>
+              <p className={styles.Dob}>{petInfo.birthday}</p>
+              <p className={styles.Age}>{petInfo.age} Year</p>
+              <p className={styles.Breed}>{petInfo.breed ? petInfo.breed : '-'}</p>
+              <p className={styles.Sex}>{petInfo.gender}</p>
+              <p className={styles.Activation}>{generalInfo.activation}</p>
+              <p className={styles.Spay}>{petInfo.spray ? 'Yes' : 'No'}</p>
+              <div className={styles.PhoneButtons}>
+                <Link href="a">My contact</Link>
+                <Link href="b">Lindsey</Link>
+              </div>
             </div>
         </div>
       </div>

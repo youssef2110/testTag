@@ -64,7 +64,7 @@ function StepFour() {
       <React.Fragment>
         <ProgressBar step={3} pourcentage={pourcentage} />
         <div className={styles.InsideStep2}>
-          <SignUp Continuer={Continuer} />
+          <SignUp Continuer={Continuer} Valider={Valider} />
         </div>
       </React.Fragment>
       }

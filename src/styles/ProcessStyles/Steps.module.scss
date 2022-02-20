@@ -195,7 +195,7 @@
     font-weight: 400;
     font-size: 21px;
     text-align: center;
-    margin-bottom:40px;
+    margin-bottom:20px;
     color: #ACACAC;
 }
 .FormUserTitle{
@@ -239,6 +239,7 @@
     input, select{
         height: calc(2.5em + 1rem + 2px);
         margin-bottom: 10px;
+        font-size: 17px;
     }
     input:focus, select:focus{
         border-color: #608FF5!important;
@@ -257,6 +258,7 @@
     input, select{
         height: calc(2.5em + 1rem + 2px);
         margin-bottom: 10px;
+        font-size: 17px;
     }
     input:focus, select:focus{
         border-color: #608FF5!important;
@@ -275,6 +277,7 @@
     input, select{
         height: calc(2.5em + 1rem + 2px);
         margin-bottom: 10px;
+        font-size: 17px;
     }
     input:focus, select:focus{
         border-color: #608FF5!important;
@@ -293,6 +296,7 @@
     input, select{
         height: calc(2.5em + 1rem + 2px);
         margin-bottom: 10px;
+        font-size: 17px;
     }
     input:focus, select:focus{
         border-color: #608FF5!important;
@@ -416,7 +420,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 15px;
             border: 1px solid #000000;
             border-bottom: none;
             background: #fff;
@@ -462,13 +466,17 @@
     background-repeat: no-repeat;
 }
 .ContainerImage3{
+    position: relative;
     width : 100%;
     height : calc(100vh - 90px);
     max-height: 1200px;
-    //background-image: url('../../static/assets/step3Verification.png') ;
-	background-size: cover;
-	background-position: 0% 100%;
+    min-height: 650px;
+    background-image: url('../../static/assets/iPhone.png') ;
+    background-color: #F9FAFA;
+	background-position: center;
     background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: auto 100%;
 }
 
 // Button Social SignUp
@@ -545,6 +553,153 @@
 // QrCodeCamera style
 .QrCodeCamera{
     width: 350px;
+}
+
+// Phone Text Position
+.PetName{
+    position: absolute;
+    top: 22.5%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 85px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #608FF5;
+}
+.Dob{
+    position: absolute;
+    top: 28.7%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 30px;
+    right: 0;
+    text-align: center;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #608FF5;
+}
+.Age{
+    position: absolute;
+    top: 33.5%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 30px;
+    right: 0;
+    text-align: center;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #608FF5;
+}
+.Breed{
+    position: absolute;
+    top: 38.3%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 30px;
+    right: 0;
+    text-align: center;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #608FF5;
+}
+.Activation{
+    position: absolute;
+    top: 48.1%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 80px;
+    right: 0;
+    text-align: center;
+    width: 115px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #608FF5;
+}
+.Sex{
+    position: absolute;
+    top: 43.2%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 30px;
+    right: 0;
+    text-align: center;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #608FF5;
+}
+.Spay{
+    position: absolute;
+    top: 53%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 85px;
+    right: 0;
+    text-align: center;
+    width: 75px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #608FF5;
+}
+
+.PhoneButtons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 210px;
+    height: 80px;
+    a:first-child{
+        padding : 5px 0px;
+        background: none;
+        border: 1.5px solid #608FF5;
+        color: #608FF5;
+        transition : 0.5s;
+        font-size: 15px;
+        width : 100%;
+        text-align: center;
+        &:hover, &:focus, &:active{
+            background: #608FF5;
+            color: #FFFFFF;
+            border: 1.5px solid #608FF5;
+            outline: none;
+        }
+    }
+    a:last-child{
+        padding : 5px 0px;
+        background: none;
+        border: 1.5px solid #000000;
+        color: #000000;
+        transition : 0.5s;
+        font-size: 15px;
+        width : 100%;
+        text-align: center;
+        &:hover, &:focus, &:active{
+            background: #000000;
+            color: #FFFFFF;
+            border: 1.5px solid #000000;
+            outline: none;
+        }
+    }
 }
 
 // Responsive
@@ -650,8 +805,7 @@
         flex-direction: column;
     }
     .ContainerImage3{
-        height: 100vh;
-        margin: 10px auto;
+        margin: 20px auto;
     }
     .ContainerImage2{
         display: none;
@@ -672,6 +826,9 @@
         font-size: 15px;
         text-align: center;
         padding: 0px 10px;
+    }
+    .UnderTitleStep6{
+        margin-top: 20px;
     }
     .BlankTitle, .BlankTitle2{
         height: 31px;
@@ -734,6 +891,15 @@
                     font-size: 15px;
                 }
             }
+        }
+    }
+    .PhoneButtons{
+        height: 70px;
+        a:first-child{
+            font-size: 12px;
+        }
+        a:last-child{
+            font-size: 12px;
         }
     }
 }

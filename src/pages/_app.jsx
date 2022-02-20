@@ -57,14 +57,20 @@ class MyApp extends App {
   }
 
   componentDidUpdate(prevProps) {
+    
     if (this.props.theme !== prevProps.theme) {
       // Toggling theme body class
-      if (this.props.theme === "dark") {
-        document.body.classList.remove("theme-light")
-        document.body.classList.add("theme-dark")
-      } else {
+      if(location.pathname === '/' || location.pathname.includes('process')){
         document.body.classList.remove("theme-dark")
         document.body.classList.add("theme-light")
+      }else{
+        if (this.props.theme === "dark") {
+          document.body.classList.remove("theme-light")
+          document.body.classList.add("theme-dark")
+        } else {
+          document.body.classList.remove("theme-dark")
+          document.body.classList.add("theme-light")
+        }
       }
     }
   }

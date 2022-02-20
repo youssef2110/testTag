@@ -17,7 +17,7 @@ import {
   petTypeAction, 
   petTypeOtherAction 
 } from "./petInfoAction"
-import { VetInfoAction, contactInfoAction } from "./generalInfo"
+import { VetInfoAction, contactInfoAction, ActivationAction } from "./generalInfo"
 
 // Export all actions
 export {
@@ -42,5 +42,6 @@ export {
   petPictureAction, 
   petSprayAction, 
   petTypeAction, 
-  petTypeOtherAction
+  petTypeOtherAction,
+  ActivationAction
 }

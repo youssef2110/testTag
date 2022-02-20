@@ -6,27 +6,33 @@ import { Container } from '@blueupcode/components'
 import Image from 'next/image'
 import TagImage from 'static/assets/tag.png'
 import { QrReader } from 'react-qr-reader';
+//import { swal } from "components/swal/instance"
+import { useDispatch } from 'react-redux'
+import { ActivationAction } from 'store/actions/generalInfo'
 
-export default function TagsActivate() {
+export default function TagsActivate({NextStep}) {
   const [activate, setActivate] = useState('')
-  const [facingMode, setFacingMode] = useState('environment')
   const [activateCamera, setActivateCamera] = useState(false)
+  const dispatch = useDispatch();
+
   const ValidatInfo = () => {
+    dispatch(ActivationAction(activate));
+    NextStep()
   }
+
   const handleScan = (data) => {
     if (data) {
-        setActivate(data)
+        /*if(data.includes('https://tag.furrytag.com')){
+            const value = data.split('tag.furrytag.com/');
+            setActivate(value[1])
+        }else{
+            swal.fire({ text: 'QrCode is not valid', icon: "error" })
+        }*/
+        const value = data.split('tag.furrytag.com/');
+        setActivate(value[1])
         setActivateCamera(false)
     }
   };
-
-  const camareButton = () =>{
-    if(facingMode === "environment"){
-        setFacingMode("user")
-    } else {
-        setFacingMode("environment")
-    }
-  }
   return (
     <div>
         <Container>
@@ -38,7 +44,7 @@ export default function TagsActivate() {
                     <div className={styles.QrCodeCamera}> 
                         <QrReader
                             delay={1000}
-                            constraints={{facingMode : facingMode}}
+                            constraints={{facingMode : 'environment'}}
                             onResult={(result) => {
                                 if (result) {
                                     handleScan(result?.text);
@@ -46,7 +52,6 @@ export default function TagsActivate() {
                             }}
                             style={{ width: '100%'  }}
                         />
-                        <button onClick={() => camareButton()}>test</button>
                     </div>
                     :
                     <>

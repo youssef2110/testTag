@@ -12,4 +12,10 @@ export function* vetInfoSaga() {
   info.veterinarian = vetInfo
   localStorage.setItem("generalInfo", JSON.stringify(info))
 }
+export function* activationSaga() {
+  const activation = yield select((state) => state.generalInfo.activation)
+  let info = JSON.parse(localStorage.getItem("generalInfo"))
+  info.activation = activation
+  localStorage.setItem("generalInfo", JSON.stringify(info))
+}
 

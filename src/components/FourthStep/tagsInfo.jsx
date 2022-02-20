@@ -11,6 +11,7 @@ import tag1 from 'static/assets/Tag1.png'
 import tag2 from 'static/assets/Tag2.png'
 import tag3 from 'static/assets/Tag3.png'
 import styles from 'styles/ProcessStyles/Steps.module.scss'
+
 function CarouselPrev2(props) {
     const { onClick } = props
     return (

@@ -14,7 +14,7 @@ import {
   petAgeSaga,
   petPictureSaga,
 } from "./petInfoSaga"
-import { contactInfoSaga, vetInfoSaga } from "./generalInfoSaga"
+import { contactInfoSaga, vetInfoSaga, activationSaga } from "./generalInfoSaga"
 import TYPES from "store/types"
 
 function* rootSaga() {
@@ -33,6 +33,7 @@ function* rootSaga() {
   yield takeEvery(TYPES.PET_PICTURE, petPictureSaga)
   yield takeEvery(TYPES.CONTACT_INFO, contactInfoSaga)
   yield takeEvery(TYPES.VET_INFO, vetInfoSaga)
+  yield takeEvery(TYPES.ACTIVATION_INFO, activationSaga)
 }
 
 export default rootSaga

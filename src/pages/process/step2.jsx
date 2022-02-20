@@ -45,6 +45,7 @@ function StepTwo() {
         localStorage.setItem("generalInfo", JSON.stringify({
           veterinarian : {name : '', doctor : '' , adresse : '', city : '' , phoneStart: '', phone : '', zipCode : ''},
           contact : [{first_name : '', last_name : '' ,phoneStart: '', phone : '', email : '' , method : []}],
+          activation :'',
         }))
       }
     }

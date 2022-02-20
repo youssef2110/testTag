@@ -7,11 +7,14 @@ import facebook from 'static/assets/FacebookIcon.png'
 import instagram from 'static/assets/InstagramIcon.png'
 import pinterest from 'static/assets/PinterestIcon.png'
 import tiktok from 'static/assets/TiktokIcon.png'
+import { useEffect } from "react"
 
 function Home() {
-  if (typeof window !== "undefined") {
-    localStorage.setItem("theme", 'light')
-  }
+  useEffect(function() {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("theme", 'light')
+    }
+  },[]);
   return (
     <div className={styles.Home}>
     <div className={styles.HomeBox}>
