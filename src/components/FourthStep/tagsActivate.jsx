@@ -21,10 +21,10 @@ export default function TagsActivate() {
   };
 
   const camareButton = () =>{
-    if(facingMode === "rear"){
+    if(facingMode === "environment"){
         setFacingMode("user")
     } else {
-        setFacingMode("rear")
+        setFacingMode("environment")
     }
   }
   return (
@@ -38,7 +38,7 @@ export default function TagsActivate() {
                     <div className={styles.QrCodeCamera}> 
                         <QrReader
                             delay={1000}
-                            facingMode={facingMode}
+                            constraints={{facingMode : facingMode}}
                             onResult={(result) => {
                                 if (result) {
                                     handleScan(result?.text);
